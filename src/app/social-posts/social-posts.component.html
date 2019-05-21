@@ -1,0 +1,25 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis|Homemade+Apple&display=swap" rel="stylesheet">
+
+<body>
+<section>
+<h1 class="thoughts">My Thoughts</h1>
+<button (click)="toggleDisplay()">New Thought</button>
+
+<form *ngFor="let post of post; index as i">
+<h1>{{ post.title }} </h1>
+<p>{{ post.thought }}</p>
+<i (click)="removePost(i)" class="material-icons">X</i>
+</form>
+</section>
+<section class = "newForms">
+<post-form (onAddPost)="addPost($event)" *ngIf="!shouldBeShown">
+</post-form>
+</section>
+</body>
+
+
+<!-- <form>
+        <input type="text">
+        <button>Add Post</button>
+</form> -->
+
