@@ -1,20 +1,24 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis|Homemade+Apple&display=swap" rel="stylesheet">
 
 <body>
-<section>
-<h1 class="thoughts">My Thoughts</h1>
-<button (click)="toggleDisplay()">New Thought</button>
+    <section>
+        <h1 class="thoughts">My Thoughts</h1>
+        <button (click)="toggleDisplay()">New Thought</button>
+        <section class="allPosts">
 
-<form *ngFor="let post of post; index as i">
-<h1>{{ post.title }} </h1>
-<p>{{ post.thought }}</p>
-<i (click)="removePost(i)" class="material-icons">X</i>
-</form>
-</section>
-<section class = "newForms">
-<post-form (onAddPost)="addPost($event)" *ngIf="!shouldBeShown">
-</post-form>
-</section>
+            <form class="form" *ngFor="let post of post; index as i">
+                <h1 class="postTitle">{{ post.title }} </h1>
+                <div>
+                    <p>{{ post.thought }}</p>
+                    <i (click)="removePost(i)" class="material-icons">X</i></div>
+            </form>
+        </section>
+    </section>
+    <section class="newForms">
+
+        <post-form (onAddPost)="addPost($event)" *ngIf="!shouldBeShown">
+        </post-form>
+    </section>
 </body>
 
 
@@ -22,4 +26,3 @@
         <input type="text">
         <button>Add Post</button>
 </form> -->
-

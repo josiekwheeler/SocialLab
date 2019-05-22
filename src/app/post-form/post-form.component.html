@@ -1,10 +1,12 @@
-<form #postForm="ngForm"(ngSubmit)="addPost(postForm)">
-    <label for="">Title</label>
-    <input type="text" name="titleToAdd" ngModel>
-    <label for="">Thought</label>
-    <input type="text" name="thoughtToAdd" ngModel>
-    <button>Add Post</button>
-</form>
+<section class="allThePosts">
+    <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
+        <label for="">Title</label>
+        <input class="titleInput" type="text" placeholder="Post title" name="titleToAdd" ngModel>
+        <label for="">Thought</label>
+        <input class="thoughtInput" type="text" name="thoughtToAdd" ngModel>
+        <button>Add Post</button>
+    </form>
+</section>
 
 <post [post]="post">
-</post>   
+</post>

@@ -38,7 +38,10 @@ export class SocialPostsComponent implements OnInit {
     this.shouldBeShown = !this.shouldBeShown;
   }
 
-  ngOnInit() {
+  getPosts(): any[]{
+    return this.post;
   }
 
+  ngOnInit() {
+  }
 }
